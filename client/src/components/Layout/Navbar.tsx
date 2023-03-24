@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import PixIcon from "@mui/icons-material/Pix";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import FlexBetween from "../UI/FlexBetween";
 import DashboardLink from "../UI/DashboardLink";
 
