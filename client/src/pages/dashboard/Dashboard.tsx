@@ -1,11 +1,37 @@
-import { useTheme } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
+import {
+  gridTemplateLargeScreens,
+  gridTemplateSmallScreens,
+} from "../../components/UI/GridTemplate";
 
 const Dashboard = () => {
   const { palette } = useTheme();
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
+
+  const gridStyles = {
+    color: palette.grey[300],
+    display: "grid",
+    gap: "1.5rem",
+    ...(isAboveMediumScreens
+      ? {
+          gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
+          gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
+          gridTemplateAreas: gridTemplateLargeScreens,
+        }
+      : {
+          gridAutoColumns: "1fr",
+          gridAutoRows: "80px",
+          gridTemplateAreas: gridTemplateSmallScreens,
+        }),
+  };
+
   return (
-    <>
-      <h1>Dashboard</h1>
-    </>
+    <Box sx={{ width: "100%", height: "100%" }}>
+      <Box {...gridStyles}>
+        <h1>Dashboard</h1>
+      </Box>
+    </Box>
   );
 };
+
 export default Dashboard;
