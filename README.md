@@ -1,16 +1,14 @@
 # Finance Dashboard 🚀
 
-
 ### Client Side Dependencies
 
-
 ```bash
-    npm i --save react-redux @reduxjs/toolkit react-router-dom @mui/material @emotion/react @emotion/styled @emotion/icons-material @mui/x-data-grid
+    npm i --save react-redux @reduxjs/toolkit react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid
 ```
 
 ### Client Side DevDependencies
 
-```bash 
+```bash
     npm i --save-dev @types/react-dom eslint eslint-config-react-app @types/node
 ```
 

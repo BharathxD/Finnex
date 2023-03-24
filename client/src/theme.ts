@@ -2,6 +2,7 @@
 
 export const tokens = {
   grey: {
+    // Grey
     100: "#f0f0f3",
     200: "#e1e2e7",
     300: "#d1d3da",
@@ -13,7 +14,7 @@ export const tokens = {
     900: "#242427",
   },
   primary: {
-    // light green
+    // Light Green
     100: "#d0fcf4",
     200: "#a0f9e9",
     300: "#71f5de",
@@ -25,7 +26,7 @@ export const tokens = {
     900: "#043028",
   },
   secondary: {
-    // yellow
+    // Yellow
     100: "#fcf0dd",
     200: "#fae1bb",
     300: "#f7d299",
@@ -37,7 +38,7 @@ export const tokens = {
     900: "#302411",
   },
   tertiary: {
-    // purple
+    // Purple
     500: "#8884d8",
   },
   background: {
@@ -46,7 +47,7 @@ export const tokens = {
   },
 };
 
-// mui theme settings
+// Material UI Theme settings
 export const themeSettings = {
   palette: {
     primary: {
