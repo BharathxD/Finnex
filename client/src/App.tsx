@@ -1,29 +1,24 @@
-import "@/App.css";
-import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import { themeSettings } from "./theme";
+import Layout from "./components/Layout/Layout";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Predictions from "./pages/predictions/Predictions";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import { themeSettings } from "./themes/theme";
 import { useMemo } from "react";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Layout/Navbar";
-import Dashboard from "./pages/dashboard/Dashboard";
+import "@/App.css";
 
 const App = () => {
   const theme = useMemo(() => createTheme(themeSettings), []);
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box width={"100%"} height={"100%"} padding={"1rem 2rem 4rem 2rem"}>
-          <Navbar />
-          <Routes>
-            <Route path={"/"} element={<Dashboard />} />
-            <Route
-              path={"/predictions"}
-              element={<div>Predictions Page</div>}
-            />
-          </Routes>
-        </Box>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <Routes>
+          <Route path={"/"} element={<Dashboard />} />
+          <Route path={"/predictions"} element={<Predictions />} />
+        </Routes>
+      </Layout>
+    </ThemeProvider>
   );
 };
 

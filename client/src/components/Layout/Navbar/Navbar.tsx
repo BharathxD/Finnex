@@ -1,7 +1,7 @@
 import PixIcon from "@mui/icons-material/Pix";
 import { Typography, useTheme } from "@mui/material";
-import FlexBetween from "../UI/FlexBetween";
-import NavbarLink from "../UI/NavbarLink";
+import FlexBetween from "../../UI/FlexBetween";
+import NavbarLink from "../../UI/NavbarLink";
 
 type Props = {};
 
@@ -13,7 +13,7 @@ const Navbar = (props: Props) => {
       <FlexBetween gap="0.5rem">
         <PixIcon sx={{ fontSize: "28px" }} />
         <Typography variant="h4" fontSize="16px">
-          Finex
+          Finnex
         </Typography>
       </FlexBetween>
       {/* RIGHT SIDE */}
