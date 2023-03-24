@@ -1,26 +1,47 @@
 import { useState } from "react";
-import { Box, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Link as MuiLink, useTheme } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
-type Props = {
+interface DashboardLinkProps {
   linkText: string;
-};
+}
 
-const DashboardLink = ({ linkText }: Props) => {
-  const [selected, setSelected] = useState<string>();
+const DashboardLink = ({ linkText }: DashboardLinkProps) => {
+  const [isFocused, setIsFocused] = useState(false);
   const { palette } = useTheme();
+
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
+
+  const uri =
+    linkText.toLowerCase() === "dashboard" ? "/" : `/${linkText.toLowerCase()}`;
+
+  const styles = {
+    link: {
+      color: palette.grey[700],
+      textDecoration: "none",
+    },
+    linkFocused: {
+      color: "inherit",
+    },
+  };
+
+  const linkStyles = isFocused
+    ? { ...styles.link, ...styles.linkFocused }
+    : styles.link;
+
   return (
     <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
-      <Link
-        to="/"
-        onClick={() => setSelected(linkText)}
-        style={{
-          color: selected === linkText ? "inherit" : palette.grey[700],
-          textDecoration: "inherit",
-        }}
+      <MuiLink
+        component={RouterLink}
+        to={uri}
+        onClick={handleFocus}
+        style={linkStyles}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       >
         {linkText}
-      </Link>
+      </MuiLink>
     </Box>
   );
 };
