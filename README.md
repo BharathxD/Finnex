@@ -11,5 +11,5 @@
 ### Client Side DevDependencies
 
 ```bash 
-    npm i --save-dev @types/react-dom 
+    npm i --save-dev @types/react-dom eslint eslint-config-react-app
 ```
