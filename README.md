@@ -13,3 +13,7 @@
 ```bash 
     npm i --save-dev @types/react-dom eslint eslint-config-react-app
 ```
+
+### Environment Variables
+
+`VITE_BASE_URL`
