@@ -3,10 +3,12 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { themeSettings } from "./theme";
 import { useMemo } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/Layout/Navbar";
 
 const App = () => {
   const theme = useMemo(() => createTheme(themeSettings), []);
+  const [selected, setSelected] = useState<boolean>();
   return (
     <>
       <ThemeProvider theme={theme}>
