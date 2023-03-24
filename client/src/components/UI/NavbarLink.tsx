@@ -1,11 +1,11 @@
 import { Box, Link as MuiLink, useTheme } from "@mui/material";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
-interface DashboardLinkProps {
+interface NavbarLinkProps {
   linkText: string;
 }
 
-const DashboardLink = ({ linkText }: DashboardLinkProps) => {
+const NavbarLink = ({ linkText }: NavbarLinkProps) => {
   const { palette } = useTheme();
   const { pathname } = useLocation();
 
@@ -29,7 +29,7 @@ const DashboardLink = ({ linkText }: DashboardLinkProps) => {
     : styles.link;
 
   return (
-    <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+    <Box>
       <MuiLink component={RouterLink} to={uri} style={linkStyles}>
         {linkText}
       </MuiLink>
@@ -37,4 +37,4 @@ const DashboardLink = ({ linkText }: DashboardLinkProps) => {
   );
 };
 
-export default DashboardLink;
+export default NavbarLink;
