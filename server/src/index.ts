@@ -4,12 +4,14 @@ import cors from "cors";
 import helmet from "helmet";
 import route from "./routes";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import { connect, disconnect } from "./utils/connect";
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 app.use(express.json());
+app.use(morgan("common"));
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
