@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
+import logger from "./utils/logger";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,5 +10,5 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`Server is up and running at http://localhost:${PORT}`);
+  logger.info(`Server is up and running at http://localhost:${PORT}`);
 });
