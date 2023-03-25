@@ -3,6 +3,7 @@ import {
   gridTemplateLargeScreens,
   gridTemplateSmallScreens,
 } from "../../components/UI/GridTemplate";
+import DashboardBox from "@/components/Dashboard/DashboardBox";
 
 const Dashboard = () => {
   const { palette } = useTheme();
@@ -28,16 +29,16 @@ const Dashboard = () => {
   return (
     <Box sx={{ width: "100%", height: "100%" }}>
       <Box {...gridStyles}>
-        <Box gridArea="a" bgcolor="#fff"></Box>
-        <Box gridArea="b" bgcolor="#fff"></Box>
-        <Box gridArea="c" bgcolor="#fff"></Box>
-        <Box gridArea="d" bgcolor="#fff"></Box>
-        <Box gridArea="e" bgcolor="#fff"></Box>
-        <Box gridArea="f" bgcolor="#fff"></Box>
-        <Box gridArea="g" bgcolor="#fff"></Box>
-        <Box gridArea="h" bgcolor="#fff"></Box>
-        <Box gridArea="i" bgcolor="#fff"></Box>
-        <Box gridArea="j" bgcolor="#fff"></Box>
+        <DashboardBox gridArea="a" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="b" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="c" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="d" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="e" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="f" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="g" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="h" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="i" bgcolor="#fff"></DashboardBox>
+        <DashboardBox gridArea="j" bgcolor="#fff"></DashboardBox>
       </Box>
     </Box>
   );
