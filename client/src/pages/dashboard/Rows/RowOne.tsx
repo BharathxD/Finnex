@@ -3,7 +3,7 @@ import { useGetKpiQuery } from "@/state/api";
 
 const RowOne = () => {
   const { data } = useGetKpiQuery();
-  
+
   return (
     <>
       <DashboardBox gridArea="a"></DashboardBox>

@@ -1,14 +1,24 @@
 import express, { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import logger from "./utils/logger";
+import cors from "cors";
+import helmet from "helmet";
 import dotenv from "dotenv";
 import { connect, disconnect } from "./utils/connect";
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+app.use(express.json());
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    methods: ["GET", "POST"],
+  })
+);
+app.use(helmet());
 
-app.get("/healthcheck", (req: Request, res: Response) => {
+app.get("/healthcheck", (_, res: Response) => {
   res.status(StatusCodes.OK).send({ message: "ok" });
 });
 
@@ -17,10 +27,10 @@ const server = app.listen(PORT, async () => {
   connect();
 });
 
-const signals = ["SIGINT", "SIGTERM"];
+const signals = ["SIGTERM", "SIGINT"];
 
 const gracefulShutdown = async (signal: string) => {
-  server.once(signal, async () => {
+  process.once(signal, async () => {
     console.log(`Received ${signal}, shutting down gracefully...`);
     try {
       await Promise.all([

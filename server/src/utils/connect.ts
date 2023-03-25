@@ -3,16 +3,16 @@ import logger from "./logger";
 import dotenv from "dotenv";
 dotenv.config();
 
-const mongoUri = process.env.MONGO_URI || "";
+const mongoUri = process.env.MONGO_URI;
 
 export const connect = async () => {
   try {
-    if (mongoUri === "") {
-      throw new Error("Provide a Valid URI");
+    if (!mongoUri) {
+      throw new Error("Mongo URI not found");
     }
     mongoose.set("strictQuery", false);
     logger.info("Connecting to the Database...");
-    mongoose.connect(mongoUri);
+    await mongoose.connect(mongoUri);
     logger.info("Connected to the Database");
   } catch (error: any) {
     logger.error(`Error connecting to the Database: ${error.message}`);
@@ -20,9 +20,9 @@ export const connect = async () => {
   }
 };
 
-export const disconnect = () => {
+export const disconnect = async () => {
   try {
-    mongoose.disconnect();
+    await mongoose.disconnect();
   } catch (error: any) {
     logger.error(`Error disconnecting from the Database: ${error.message}`);
   }
