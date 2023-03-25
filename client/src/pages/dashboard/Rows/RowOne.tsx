@@ -2,7 +2,8 @@ import DashboardBox from "@/components/Dashboard/DashboardBox";
 import { useGetKpiQuery } from "@/state/api";
 
 const RowOne = () => {
-  const { data } = useGetKpiQuery;
+  const { data } = useGetKpiQuery();
+  
   return (
     <>
       <DashboardBox gridArea="a"></DashboardBox>

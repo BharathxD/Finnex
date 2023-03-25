@@ -17,3 +17,13 @@
 ### Environment Variables
 
 `VITE_BASE_URL`
+
+### Backend Dependencies
+
+```bash
+    npm i --save express cors pino dotenv helmet morgan logger mongoose-currency @typegoose/typegoose http-status-codes mongoose@~6.10.0
+```
+
+```bash
+    npm i --save-dev @types/cors @types/express pino-pretty ts-node-dev typescript
+```
