@@ -1,8 +1,8 @@
-import express, { Request, Response } from "express";
-import { StatusCodes } from "http-status-codes";
+import express from "express";
 import logger from "./utils/logger";
 import cors from "cors";
 import helmet from "helmet";
+import route from "./routes";
 import dotenv from "dotenv";
 import { connect, disconnect } from "./utils/connect";
 dotenv.config();
@@ -18,13 +18,10 @@ app.use(
 );
 app.use(helmet());
 
-app.get("/healthcheck", (_, res: Response) => {
-  res.status(StatusCodes.OK).send({ message: "ok" });
-});
-
 const server = app.listen(PORT, async () => {
   logger.info(`Server is up and running at http://localhost:${PORT}`);
-  connect();
+  await connect();
+  route(app);
 });
 
 const signals = ["SIGTERM", "SIGINT"];
