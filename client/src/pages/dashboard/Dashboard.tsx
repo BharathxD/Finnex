@@ -4,6 +4,9 @@ import {
   gridTemplateSmallScreens,
 } from "../../components/UI/GridTemplate";
 import DashboardBox from "@/components/Dashboard/DashboardBox";
+import RowOne from "./Rows/RowOne";
+import RowThree from "./Rows/RowThree";
+import RowTwo from "./Rows/RowTwo";
 
 const Dashboard = () => {
   const { palette } = useTheme();
@@ -33,19 +36,11 @@ const Dashboard = () => {
         height: "100%",
         paddingTop: "20px",
       }}
+      {...gridStyles}
     >
-      <Box {...gridStyles}>
-        <DashboardBox gridArea="a" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="b" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="c" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="d" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="e" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="f" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="g" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="h" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="i" bgcolor="#fff"></DashboardBox>
-        <DashboardBox gridArea="j" bgcolor="#fff"></DashboardBox>
-      </Box>
+      <RowOne />
+      <RowTwo />
+      <RowThree />
     </Box>
   );
 };
