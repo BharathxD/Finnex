@@ -25,5 +25,5 @@
 ```
 
 ```bash
-    npm i --save-dev @types/cors @types/express pino-pretty ts-node-dev typescript
+    npm i --save-dev @types/cors @types/express pino-pretty ts-node-dev typescript @types/mongoose-currency
 ```

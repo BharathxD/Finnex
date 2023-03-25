@@ -18,7 +18,7 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
-app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 const server = app.listen(PORT, async () => {
   logger.info(`Server is up and running at http://localhost:${PORT}`);

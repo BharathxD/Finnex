@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import logger from "./logger";
 import dotenv from "dotenv";
+import { kpis } from "../data/data";
+import KPIModel from "../models/kpi.model";
 dotenv.config();
 
 const mongoUri = process.env.MONGO_URI;
@@ -13,6 +15,7 @@ export const connect = async () => {
     mongoose.set("strictQuery", false);
     logger.info("Connecting to the Database...");
     await mongoose.connect(mongoUri);
+    // KPIModel.insertMany(kpis);
     logger.info("Connected to the Database");
   } catch (error: any) {
     logger.error(`Error connecting to the Database: ${error.message}`);
