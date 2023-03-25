@@ -28,7 +28,16 @@ const Dashboard = () => {
   return (
     <Box sx={{ width: "100%", height: "100%" }}>
       <Box {...gridStyles}>
-        <h1>Dashboard</h1>
+        <Box gridArea="a" bgcolor="#fff"></Box>
+        <Box gridArea="b" bgcolor="#fff"></Box>
+        <Box gridArea="c" bgcolor="#fff"></Box>
+        <Box gridArea="d" bgcolor="#fff"></Box>
+        <Box gridArea="e" bgcolor="#fff"></Box>
+        <Box gridArea="f" bgcolor="#fff"></Box>
+        <Box gridArea="g" bgcolor="#fff"></Box>
+        <Box gridArea="h" bgcolor="#fff"></Box>
+        <Box gridArea="i" bgcolor="#fff"></Box>
+        <Box gridArea="j" bgcolor="#fff"></Box>
       </Box>
     </Box>
   );
