@@ -1,4 +1,5 @@
 # Finnex 🚀
+
 ### A Finance Dashboard
 
 ### Client Side Dependencies
