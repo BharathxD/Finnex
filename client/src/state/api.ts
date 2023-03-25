@@ -4,7 +4,7 @@ export const api = createApi({
   reducerPath: "main",
   tagTypes: ["Kpis"],
   endpoints: (build) => ({
-    getKpi: build.query({
+    getKpi: build.query<void, void>({
       query: () => "kpi/kpis",
       providesTags: ["Kpis"],
     }),
